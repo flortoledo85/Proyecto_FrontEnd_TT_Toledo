@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -231,52 +232,63 @@ main {
   box-sizing: border-box;
 }
 
-.resenias {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 10px;
-  padding: 20px;
+#resenias {
+  padding: 3rem;
 }
 
-.resenias .card {
+.resenias--contenedor{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(20rem, 1fr));
+  grid-template-rows: auto;
+  gap: 1rem;
+  justify-content: center;
+  justify-items: center;
+}
+
+#resenias h2 {
+  padding: 2rem;
+  margin-top: 10vh;
+  color: whitesmoke;
+}
+
+.card--content{  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;}
+
+.card {
+  padding: 3rem;
   margin-top: 5vh;
-  width: 100%;
-  background-color: rgb(67, 73, 75);
-  color: rgb(184, 243, 227);
-  padding: 5px;
-  text-align: center;  
+  width: 20rem;
+  height: 25rem;
+  text-align: center;
+  border: 2px rgb(1, 1, 182) solid;
+  border-radius: 10%;
+  background-color: rgb(17, 94, 217);
+  color: rgb(188, 226, 241);
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 1rem;
-  box-sizing: border-box;
-  border-radius: 10px;
-  transition: 0.3s;
-  opacity: 0.6;
+  box-shadow: 4px 4px 6px rgba(0,0,0,0.5);
+  transition: all;
 }
 
-.resenias :hover{
+.card img{
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.card:hover{
   background-color: #042975;
   color: rgb(244, 238, 230);
   font-weight: 600;
   opacity: 1;
-}
-
-@media (max-width: 768px) {
-  .resenias{
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  }
-}
-
-@media (max-width: 992px) {
-  .resenias{
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  }
-}
-
-@media (max-width: 1200px) {
-  .resenias{
-    grid-template-columns: repeat(4, fr);
-  }
+  transform: translateY(-5px);
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
 }
 
 .formulario .form_ {
@@ -332,7 +344,7 @@ main {
   margin-top: 1rem;
 }
 
-/*Footer*/
+/*Footer________________________________________________________*/
 
 footer {
   grid-column: 1 / 4;
@@ -348,4 +360,17 @@ footer {
 }
 
 
+/*Queries________________________________________________________*/
 
+@media (max-width: 768px) {
+  .video-section{
+    display: none;
+  }
+}
+
+@media (max-width: 992px) {
+}
+
+@media (max-width: 1200px) {
+
+}
