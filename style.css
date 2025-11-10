@@ -10,7 +10,7 @@ a {
   text-decoration: none;
 }
 
-/*header*/
+/*Header________________________________________________________*/
 
 header {
   grid-column: 1 / 4;
@@ -52,30 +52,7 @@ header {
   padding: 0.5rem;
 }
 
-@media (max-width: 768px) {
-  .top_line{
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
 
-  .top_line h1{
-    font-size: 2rem;
-    background-color: transparent;
-    margin-top: 0.5rem;
-  }
-
-  .top_line img{
-    width: 80px;
-    margin-bottom: 0.5rem;
-  }
-
-  .top_line .carrito_de_compras{
-    position: static;
-    margin: 0.5rem 0;
-  }
-  
-}
 header h2 {
     font-size: 1.75rem; 
     font-family: 'Manrope', sans-serif;
@@ -106,7 +83,7 @@ header h2 {
   color: whitesmoke;
 }
 
-/*body*/
+/*Body__________________________________________________________*/
 
 
 body {
@@ -130,25 +107,6 @@ main {
   grid-row: 2;
 }
 
-/*
-@media (max-width:600px) {
-  main {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 992px) {
-  main{
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  
-}
-
-@media (max-width: 1200px) {
-  main{
-    grid-template-columns: repeat(4, fr);
-  }
-}*/
 
 .video-section video{
   position: relative;
@@ -366,11 +324,40 @@ footer {
   .video-section{
     display: none;
   }
+
+  .top_line{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .top_line h1{
+    font-size: 2rem;
+    background-color: transparent;
+    margin-top: 0.5rem;
+  }
+
+  .top_line img{
+    width: 80px;
+    margin-bottom: 0.5rem;
+  }
+
+  .top_line .carrito_de_compras{
+    position: static;
+    margin: 0.5rem 0;
+  }
+  
 }
 
+
 @media (max-width: 992px) {
+  main{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 @media (max-width: 1200px) {
-
+  main{
+    grid-template-columns: repeat(4, fr);
+  }
 }
