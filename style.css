@@ -194,19 +194,19 @@ main {
   padding: 3rem;
 }
 
-.resenias--contenedor{
-  display: grid;
-  grid-template-columns: repeat(3, minmax(20rem, 1fr));
-  grid-template-rows: auto;
-  gap: 1rem;
-  justify-content: center;
-  justify-items: center;
-}
-
 #resenias h2 {
   padding: 2rem;
   margin-top: 10vh;
   color: whitesmoke;
+}
+
+.resenias--contenedor{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  /*grid-template-rows: auto;*/
+  gap: 3rem;
+  justify-content: center;
+  justify-items: center;
 }
 
 .card--content{  
@@ -219,8 +219,8 @@ main {
 .card {
   padding: 3rem;
   margin-top: 5vh;
-  width: 20rem;
-  height: 25rem;
+  /*width: 15rem;*/
+  height: auto;
   text-align: center;
   border: 2px rgb(1, 1, 182) solid;
   border-radius: 10%;
@@ -346,7 +346,25 @@ footer {
     position: static;
     margin: 0.5rem 0;
   }
+   
+  #resenias {
+    padding: 1rem;    /* Reducimos padding */
+  }
   
+  .card {
+    width: 70%;       /* Que use más del ancho de pantalla */
+    height: auto;     /* Que crezca según contenido */
+    margin-top: 2rem; /* Menos margen */
+    padding: 2rem;
+  }
+
+  #resenias h2 {
+    padding: 1rem;
+    margin-top: 5vh;
+  }
+
+
+
 }
 
 
