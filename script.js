@@ -155,21 +155,21 @@ function mostrarDescripcion(evento) {
     }
 }
 
-    // EJECUCION DE MI PROGRAMA
+// EJECUCION DE MI PROGRAMA
 
-    const lista = generarProductos();
-    const nuevo = crearProducto(5, "Rayban Polarizado", "Anteojos de Sol. RayBan P. Armazon negro. Medidas: ancho total 139.7 mm. Largo patilla: 145 mm.", "./pictures/rayban_p.jpg", 220000,)
-    const listaNueva = agregarProducto(lista, nuevo)
+const lista = generarProductos();
+const nuevo = crearProducto(5, "Rayban Polarizado", "Anteojos de Sol. RayBan P. Armazon negro. Medidas: ancho total 139.7 mm. Largo patilla: 145 mm.", "./pictures/rayban_p.jpg", 220000,)
+const listaNueva = agregarProducto(lista, nuevo)
 
-    mostrarCatalogo1(lista);
-    console.log("--------------------");
-    mostrarCatalogo2(listaNueva);
-    console.log("--------------------");
-    const listaCopiada = copiaListaProductos(listaNueva);
-    console.log(listaCopiada)
-    console.log("--------------------");
-    insertarProducto(listaCopiada)
+mostrarCatalogo1(lista);
+console.log("--------------------");
+mostrarCatalogo2(listaNueva);
+console.log("--------------------");
+const listaCopiada = copiaListaProductos(listaNueva);
+console.log(listaCopiada)
+console.log("--------------------");
+insertarProducto(listaCopiada)
 
-    const contenedorProducto = document.querySelector("#productos .catalogo");
-    console.log(contenedorProducto);
-    contenedorProducto.addEventListener("click", mostrarDescripcion);
+const contenedorProducto = document.querySelector("#productos .catalogo");
+console.log(contenedorProducto);
+contenedorProducto.addEventListener("click", mostrarDescripcion);
