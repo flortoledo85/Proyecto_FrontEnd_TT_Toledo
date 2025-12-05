@@ -1,4 +1,6 @@
 
+// CARRITO
+
 const carrito = {
     productos: [],
     agregar: function (producto) {
@@ -11,6 +13,9 @@ const carrito = {
         return total;
     }
 }
+
+// FUNCIONES DE MI PROGRAMA
+
 
 function calcularTotal(productos) {
     let total = 0;
@@ -72,6 +77,10 @@ function mostrarCatalogo1(productos) {
     };
 }
 
+function copiaListaProductos(lista) {
+    return [...lista];
+}
+
 function mostrarCatalogo2(catalogo) {
     for (const { id, name, amount } of catalogo) {
         console.log(` ID: ${id} | Nombre: ${name} | Precio: ${amount.toFixed(2)}`);
@@ -83,10 +92,84 @@ function agregarProducto(catalogo, nuevoProducto) {
     return catalogoActualizado
 }
 
+function insertarProducto(listaNueva) {
+    const listaProductos = copiaListaProductos(listaNueva);
+    const contenedorProductos = document.querySelector("#productos .catalogo");
+    // console.log(contenedorProductos);
+
+    for (let c = 0; c < listaNueva.length; c++) {
+        // console.log(c)
+        const productoActual = listaNueva[c];
+
+        const nuevoElemento = document.createElement("article");
+        nuevoElemento.className = "producto";
+        const precio = new Intl.NumberFormat(navigator.language, {
+            style: "currency",
+            currency: "ARS"
+        }).format(productoActual.amount);
+        nuevoElemento.innerHTML = `
+            <a href=${productoActual.pathimg} target="_blank">
+            <img src=${productoActual.pathimg}></a>
+            <h3>${productoActual.name}</h3>
+            <p>
+                <a class="description_product" href="#." data-descripcion="${productoActual.description}"> 
+                Ver descripción</a>
+            </p>
+            <div class="contenedor_descripcion">
+
+            </div> 
+            <p>
+                Precio = ${precio}<br>
+            </p>
+            <button 
+                type="button" 
+                data-id="${productoActual.id}"
+                data-nombre="${productoActual.name}"
+                data-precio="${precio}"
+                >
+                Agregar al Carrito
+            </button>`
+        contenedorProductos.appendChild(nuevoElemento);
+    }
+}
+
+function mostrarDescripcion(evento) {
+    // console.log(evento.target.tagName);
+    const elementoClickeado = evento.target;
+    console.log(evento.target.dataset)
+    const descripcionProducto = elementoClickeado.dataset.descripcion
+    console.log(descripcionProducto)
+    const divProducto = elementoClickeado.closest(".producto");
+    const divDescrip = divProducto.querySelector(".contenedor_descripcion");
+    console.log(divDescrip);
+    if (divDescrip.children.length == 0){
+        const elementoDescrip = document.createElement("p");
+        elementoDescrip.textContent = descripcionProducto;
+        divDescrip.appendChild(elementoDescrip);
+        elementoClickeado.textContent = "Ocultar descripcion";
+    }
+    else {
+        elementoClickeado.textContent = "Ver descripcion";
+        divDescrip.innerHTML = "";
+    }
+
+}
+
+// EJECUCION DE MI PROGRAMA
+
 const lista = generarProductos();
-const nuevo = crearProducto(5, "rayban_p", "Anteojos de Sol. RayBan P. Armazon negro. Medidas: ancho total 139.7 mm. Largo patilla: 145 mm.", "./pictures/rayban_p.jpg",  220000,)
+const nuevo = crearProducto(5, "Rayban Polarizado", "Anteojos de Sol. RayBan P. Armazon negro. Medidas: ancho total 139.7 mm. Largo patilla: 145 mm.", "./pictures/rayban_p.jpg", 220000,)
 const listaNueva = agregarProducto(lista, nuevo)
 
 mostrarCatalogo1(lista);
 console.log("--------------------");
 mostrarCatalogo2(listaNueva);
+console.log("--------------------");
+const listaCopiada = copiaListaProductos(listaNueva);
+console.log(listaCopiada)
+console.log("--------------------");
+insertarProducto(listaCopiada)
+
+const contenedorProducto = document.querySelector("#productos .catalogo");
+console.log(contenedorProducto);
+contenedorProducto.addEventListener("click", mostrarDescripcion);
