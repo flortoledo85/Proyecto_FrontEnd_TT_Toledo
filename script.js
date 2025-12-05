@@ -134,42 +134,42 @@ function insertarProducto(listaNueva) {
 }
 
 function mostrarDescripcion(evento) {
-    // console.log(evento.target.tagName);
-    const elementoClickeado = evento.target;
-    console.log(evento.target.dataset)
-    const descripcionProducto = elementoClickeado.dataset.descripcion
-    console.log(descripcionProducto)
-    const divProducto = elementoClickeado.closest(".producto");
-    const divDescrip = divProducto.querySelector(".contenedor_descripcion");
-    console.log(divDescrip);
-    if (divDescrip.children.length == 0){
-        const elementoDescrip = document.createElement("p");
-        elementoDescrip.textContent = descripcionProducto;
-        divDescrip.appendChild(elementoDescrip);
-        elementoClickeado.textContent = "Ocultar descripcion";
+    const elementoEvento = evento.target.tagName;
+    if (elementoEvento === "A") {
+        const elementoClickeado = evento.target;
+        const descripcionProducto = elementoClickeado.dataset.descripcion
+        // console.log(descripcionProducto)
+        const divProducto = elementoClickeado.closest(".producto");
+        const divDescrip = divProducto.querySelector(".contenedor_descripcion");
+        // console.log(divDescrip);
+        if (divDescrip.children.length == 0) {
+            const elementoDescrip = document.createElement("p");
+            elementoDescrip.textContent = descripcionProducto;
+            divDescrip.appendChild(elementoDescrip);
+            elementoClickeado.textContent = "Ocultar descripcion";
+        }
+        else {
+            elementoClickeado.textContent = "Ver descripcion";
+            divDescrip.innerHTML = "";
+        }
     }
-    else {
-        elementoClickeado.textContent = "Ver descripcion";
-        divDescrip.innerHTML = "";
-    }
-
 }
 
-// EJECUCION DE MI PROGRAMA
+    // EJECUCION DE MI PROGRAMA
 
-const lista = generarProductos();
-const nuevo = crearProducto(5, "Rayban Polarizado", "Anteojos de Sol. RayBan P. Armazon negro. Medidas: ancho total 139.7 mm. Largo patilla: 145 mm.", "./pictures/rayban_p.jpg", 220000,)
-const listaNueva = agregarProducto(lista, nuevo)
+    const lista = generarProductos();
+    const nuevo = crearProducto(5, "Rayban Polarizado", "Anteojos de Sol. RayBan P. Armazon negro. Medidas: ancho total 139.7 mm. Largo patilla: 145 mm.", "./pictures/rayban_p.jpg", 220000,)
+    const listaNueva = agregarProducto(lista, nuevo)
 
-mostrarCatalogo1(lista);
-console.log("--------------------");
-mostrarCatalogo2(listaNueva);
-console.log("--------------------");
-const listaCopiada = copiaListaProductos(listaNueva);
-console.log(listaCopiada)
-console.log("--------------------");
-insertarProducto(listaCopiada)
+    mostrarCatalogo1(lista);
+    console.log("--------------------");
+    mostrarCatalogo2(listaNueva);
+    console.log("--------------------");
+    const listaCopiada = copiaListaProductos(listaNueva);
+    console.log(listaCopiada)
+    console.log("--------------------");
+    insertarProducto(listaCopiada)
 
-const contenedorProducto = document.querySelector("#productos .catalogo");
-console.log(contenedorProducto);
-contenedorProducto.addEventListener("click", mostrarDescripcion);
+    const contenedorProducto = document.querySelector("#productos .catalogo");
+    console.log(contenedorProducto);
+    contenedorProducto.addEventListener("click", mostrarDescripcion);
