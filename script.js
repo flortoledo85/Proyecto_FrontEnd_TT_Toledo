@@ -116,9 +116,8 @@ function insertarProducto(listaNueva) {
                 Ver descripción</a>
             </p>
             <div class="contenedor_descripcion">
-
             </div> 
-            <p>
+            <p class= "precio">
                 Precio = ${precio}<br>
             </p>
             <button 
@@ -158,7 +157,7 @@ function mostrarDescripcion(evento) {
 // EJECUCION DE MI PROGRAMA
 
 const lista = generarProductos();
-const nuevo = crearProducto(5, "Rayban Polarizado", "Anteojos de Sol. RayBan P. Armazon negro. Medidas: ancho total 139.7 mm. Largo patilla: 145 mm.", "./pictures/rayban_p.jpg", 220000,)
+const nuevo = crearProducto(5, "Rayban Polarizado", "Anteojos de Sol. RayBan P. Polarizados Color: Negro. Medidas: ancho total 139.7 mm. Largo patilla: 145 mm. Alto lente: 55 mm. DIP 55 a 70 mm.", "./pictures/rayban_p.jpg", 220000,)
 const listaNueva = agregarProducto(lista, nuevo)
 
 mostrarCatalogo1(lista);
