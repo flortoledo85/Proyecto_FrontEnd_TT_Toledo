@@ -2,7 +2,7 @@
 
 let listaCarrito = [];
 
-const productos = [];
+let productos = [];
 //JSON
 /**
  * Funcion asincronica para traer los objetos de JSON
@@ -12,14 +12,14 @@ const productos = [];
 async function cargarProductosApi() {
     try {
         const respuesta = await fetch("./productos.json");
-        if(!respuesta.ok) {
+        if (!respuesta.ok) {
             throw new Error(`Error al ;obtener los datos ${respuesta.status} - ${respuesta.statusText}`);
         }
         const productosArray = await respuesta.json();
         return productosArray;
     }
-    catch (error) {
-        console.error("Fallo en la carga de datos: ", error);
+    catch (datosError) {
+        console.datosEerror("Fallo en la carga de datos: ", datosError);
         const listaUL = document.querySelector("#productos .catalogo");
         listaUL.innerHTML = `<li id="mensaje-error"> Error al cargar el catalogo.</li>`
     }
@@ -85,17 +85,17 @@ function agregarProducto(catalogo, nuevoProducto) {
     return catalogoActualizado
 }
 
-function insertarProducto(listaNueva) {
+function insertarProducto(productos) {
     // const listaProductos = copiaListaProductos(listaNueva);
     const contenedorProductos = document.querySelector("#productos .catalogo");
     // console.log(contenedorProductos);
 
-    for (let c = 0; c < listaNueva.length; c++) {
+    for (let c = 0; c < productos.length; c++) {
         // console.log(c)
-        const productoActual = listaNueva[c];
+        const productoActual = productos[c];
         const nuevoElemento = document.createElement("article");
         nuevoElemento.className = "producto";
-        const precio = productoActual.amount
+        const precio = productoActual.value
         nuevoElemento.innerHTML = `
             <a href="${productoActual.pathimg}" target="_blank">
             <img src="${productoActual.pathimg}" alt="${productoActual.description}"></a>
@@ -123,10 +123,7 @@ function insertarProducto(listaNueva) {
 function insertarProductoHTML(producto) {
     const listaCarrito = document.querySelector("#carrito .list-group");
     const liProducto = document.createElement("li");
-    console.log("Producto recibido:", producto);
-    console.log("Tiene amount?", producto.amount);
-    console.log("Tiene precio?", producto.precio);
-    liProducto.textContent = `${producto.name} ${producto.amount.toLocaleString("es-AR", { style: "currency", currency: "ARS" })}`;
+    liProducto.textContent = `${producto.name} ${producto.value.toLocaleString("es-AR", { style: "currency", currency: "ARS" })}`;
     liProducto.className = "list-group-item";
     listaCarrito.appendChild(liProducto);
 }
@@ -176,7 +173,7 @@ function agregarAlCarrito(evento) {
         const idEncontrado = buscarEnLista(listaCarrito, idProducto);
 
         if (idEncontrado === -1) {
-            const productoEncontrado = buscarProductoID(listaNueva, idProducto);
+            const productoEncontrado = buscarProductoID(productos, idProducto);
             listaCarrito.push(productoEncontrado);
             insertarProductoHTML(productoEncontrado);
             actualizaContador();
@@ -204,34 +201,59 @@ function eliminarCarritoEnStorage() {
     vaciarCarritoHTML();
 }
 
+
+async function main() {
+    productos = await cargarProductosApi();
+
+    insertarProducto(productos)
+
+
+    const contenedorProducto = document.querySelector("#productos .catalogo");
+    // console.log(contenedorProducto);
+    contenedorProducto.addEventListener("click", mostrarDescripcion);
+    contenedorProducto.addEventListener("click", agregarAlCarrito);
+
+    const vaciarCarrito = document.querySelector("#carrito .vaciarCarrito");
+    vaciarCarrito.addEventListener("click", eliminarCarritoEnStorage);
+
+    listaCarrito = cargarCarritoStorage();
+
+    if (listaCarrito.length != 0) {
+        for (const producto of listaCarrito) {
+            console.log(producto.amount);
+            insertarProductoHTML(producto);
+        }
+        actualizaContador();
+    }
+
+}
+
+function validarFormulario(evento) {
+    evento.preventDefault();
+    const nombre = document.querySelector("#nombre").value;
+    const email = document.querySelector("#email").value;
+    if (nombre === "" || email === "") {
+        alert("Los campos son obligatorios");
+        return;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(email)) {
+        alert("Por favor ingrese un mail valido");
+        return;
+    }
+
+    console.log("Formulario correcto");
+    evento.target.submit();
+    evento.target.reset();
+
+}
+
+
+
 // EJECUCION DE MI PROGRAMA
 
-// const lista = generarProductos();
-// const nuevo = crearProducto(5, "Rayban Polarizado", "Anteojos de Sol. RayBan P. Polarizados Color: Negro. Medidas: ancho total 139.7 mm. Largo patilla: 145 mm. Alto lente: 55 mm. DIP 55 a 70 mm.", "./pictures/rayban_p.jpg", 220000.00)
-// const listaNueva = agregarProducto(productos, nuevo)
-
-// mostrarCatalogo1(lista);
-// console.log("--------------------");
-// mostrarCatalogo2(listaNueva);
-// console.log("--------------------");
-// const listaCopiada = copiaListaProductos(listaNueva);
-// console.log(listaCopiada)
-// console.log("--------------------");
-insertarProducto(listaNueva)
-
-listaCarrito = cargarCarritoStorage();
-
-if (listaCarrito.length != 0) {
-    for (const producto of listaCarrito) {
-        console.log(producto.amount);
-        insertarProductoHTML(producto);
-    }
-    actualizaContador();
-}
-const contenedorProducto = document.querySelector("#productos .catalogo");
-// console.log(contenedorProducto);
-contenedorProducto.addEventListener("click", mostrarDescripcion);
-contenedorProducto.addEventListener("click", agregarAlCarrito);
-
-const vaciarCarrito = document.querySelector("#carrito .vaciarCarrito");
-vaciarCarrito.addEventListener("click", eliminarCarritoEnStorage);
+main();
+const validacionForm = document.querySelector("#contact .formulario")
+console.log(validacionForm)
+validacionForm.addEventListener("submit", validarFormulario)
