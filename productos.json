@@ -4,27 +4,27 @@
     "name": "PinkLove",
     "description": "Armazon de acetato transparante. Color: Rosa. Medidas: ancho total 139.7 mm.Largo patilla: 145 mm. Alto lente: 44 mm.Ancho: 53 mm.DIP: 61 a 85 mm.",
     "pathimg": "./pictures/pink_love.jpg",
-    "amount": 90000
+    "value": 90000.00
   },
   {
     "id": 2,
     "name": "Cristal",
     "description": "Armazon de acetato transparante. Color: transparante. Medidas: ancho total 142.5 mm. Largo patilla: 147 mm. Alto lente: 45 mm. Ancho: 56 mm. DIP: 61 a 85 mm.",
     "pathimg": "./pictures/sunglasses.jpg",
-    "amount": 120000
+    "value": 120000.00
   },
   {
     "id": 3,
     "name": "Sol Bordo",
     "description": "Anteojos de Sol. Color: Bordo. Medidas: ancho total 139.7 mm. Largo patilla: 145 mm. Alto lente: 44 mm. Ancho: 53 mm. DIP: 61 a 85 mm.",
     "pathimg": "./pictures/cristal.jpg",
-    "amount": 198000
+    "value": 198000.00
   },
   {
     "id": 4,
     "name": "Jaspeado",
     "description": "Armazon marron jaspeado. Color: Bordo. Medidas: ancho total 141.5 mm. Largo patilla: 152 mm. Alto lente: 46 mm. Ancho: 53 mm. DIP: 61 a 85 mm.",
     "pathimg": "./pictures/jaspeado.jpg",
-    "amount": 118000
+    "value": 118000.00
   }
 ]
