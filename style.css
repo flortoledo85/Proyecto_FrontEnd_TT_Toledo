@@ -141,7 +141,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  gap: 1rem;
+  gap: 0.5rem;
   padding: 0.5rem;
   color: aliceblue;
   border-radius: 10px;
@@ -197,11 +197,10 @@ main {
 
 .producto img {
   width: 100%;
-  height: 300px;
-  object-fit: contain;
+  height: 250px;
+  object-fit: cover;
   display: block;
-  border-radius: 10px;
-  background-color: white;
+  border-radius: 30px;
 }
 
 .catalogo{
@@ -226,7 +225,7 @@ main {
 
 .resenias--contenedor{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
   /*grid-template-rows: auto;*/
   gap: 4rem;
   justify-content: center;
