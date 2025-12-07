@@ -15,6 +15,27 @@ a {
   text-decoration: none;
 }
 
+/* BOTONES GENERALES */
+.btn-primary-custom {
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  color: aliceblue;
+  background-color: #0b0372;
+  border-radius: 6px;
+  box-shadow: 4px 4px 6px rgba(0,0,0,0.7);
+  transition: 0.3s;
+}
+
+.btn-primary-custom:hover {
+  background-color: #124dd7;
+  transform: translateY(-5px);
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.5);
+}
+
+
 /*Header________________________________________________________*/
 
 header {
@@ -35,24 +56,16 @@ header {
 }
 
 .top_line img{
-  width: 60px;
+  width: 80px;
   height: auto;
-  border: 5px solid rgb(104, 19, 135);
+  border: 5px solid rgb(12, 66, 181);
   border-radius: 50%;
 }
-
-.top_line .carrito_de_compras {
-  position: relative;
-  font-size: 1.5rem;
-  margin-right: 20px;
-  margin-top: 15px;
-}
-
 
 .top_line {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   background-color: rgb(1, 15, 67);
   padding: 0.5rem;
 }
@@ -99,7 +112,7 @@ body {
   min-height: 100vh;
   gap: 10px;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(90deg, #0244c8, #1852c5, #759ff2);
+  background: linear-gradient(90deg, #3475f8, #487ce3, #638ada);
   width: 100%;
   height: 100%;
   font-weight: 400;
@@ -136,7 +149,7 @@ main {
 .producto {
   width: 30rem;
   border: 2px solid whitesmoke;
-  background-color: rgb(2, 94, 175);
+  background-color: rgba(2, 94, 175, 0.85);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -182,7 +195,7 @@ main {
   padding: 15px;
 }
 
-.producto button {
+/* .producto button {
   width: 100%;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
@@ -190,10 +203,15 @@ main {
   cursor: pointer;
   color: aliceblue;
   background-color: #0b0372;
+  box-shadow: 4px 4px 6px rgba(0,0,0,0.7);
   border-radius: 6px;
   transition: 0.3s;
 }
-.producto button:hover{background-color: #124dd7;}
+.producto button:hover{
+  background-color: #124dd7;
+  transform: translateY(-5px);
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.5);
+} */
 
 .producto img {
   width: 100%;
@@ -209,8 +227,31 @@ main {
   justify-content: center;
   margin-top: 0.5rem;
   padding: 20px;
-  gap: 5px;
+  gap: 15px;
   box-sizing: border-box;
+}
+
+#carrito .mi-boton {
+  width: 25%;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  color: aliceblue;
+  background-color: #0b0372;
+  border-radius: 6px;
+  box-shadow: 4px 4px 6px rgba(0,0,0,0.7);
+  transition: 0.3s;
+}
+
+#carrito button:hover{
+  background-color: #124dd7;
+  transform: translateY(-5px);
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.5);
+}
+
+#carrito .btn-primary-custom{
+  width: 25%;
 }
 
 #resenias {
@@ -286,19 +327,24 @@ main {
   box-sizing: border-box;
 }
 
-.formulario button {
+/* .formulario button {
   width: 100%;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   font-size: 1rem;
   cursor: pointer;
   color: aliceblue;
-  background-color: #1086a3;
+  background-color: #0b0372;
+  box-shadow: 4px 4px 6px rgba(0,0,0,0.7);
   border-radius: 6px;
   transition: 0.3s;
 }
 
-.formulario button:hover {background-color: #031e55;}
+.formulario button:hover {
+  background-color: #124dd7;
+  transform: translateY(-5px);
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.5);
+} */
 
 .contact_section {
   margin: 5% auto;

@@ -108,8 +108,9 @@ function insertarProducto(productos) {
             <p class= "precio">
                 Precio = ${precio.toLocaleString("es-AR", { style: "currency", currency: "ARS" })}<br>
             </p>
-            <button 
-                type="button" 
+            <button
+                class="btn-primary-custom"
+                type="button"
                 data-id="${productoActual.id}"
                 data-nombre="${productoActual.name}"
                 data-precio="${precio}">
