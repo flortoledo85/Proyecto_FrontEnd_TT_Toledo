@@ -31,14 +31,14 @@ function crearProducto(idProd, nameProd, descriptionProd, pathProducto, amountPr
         name: nameProd,
         description: descriptionProd,
         pathimg: pathProducto,
-        amount: amountProd
+        price: amountProd
     };
     return nuevoProducto;
 }
 
 function mostrarCatalogo1(productos) {
     for (let j = 0; j < productos.length; j++) {
-        console.log(`ID: ${productos[j].id} | Producto: ${productos[j].name} | Precio: ${productos[j].amount}`);
+        console.log(`ID: ${productos[j].id} | Producto: ${productos[j].name} | Precio: ${productos[j].price}`);
     };
 }
 
@@ -47,15 +47,15 @@ function copiaListaProductos(lista) {
 }
 
 function mostrarCatalogo2(catalogo) {
-    for (const { id, name, amount } of catalogo) {
-        console.log(` ID: ${id} | Nombre: ${name} | Precio: ${amount.toFixed(2)}`);
+    for (const { id, name, price } of catalogo) {
+        console.log(` ID: ${id} | Nombre: ${name} | Precio: ${price.toFixed(2)}`);
     };
 }
 
 function calcularTotal(productos) {
     let total = 0;
-    for (let i = 0; i < productos.lenght; i++) {
-        total += productos[i].amount;
+    for (let i = 0; i < productos.length; i++) {
+        total += productos[i].price;
     }
     return total;
 }
@@ -76,7 +76,6 @@ function buscarProductoID(catalogo, idBuscado) {
             return resto;
         }
     }
-    return -1;
 }
 
 
@@ -95,7 +94,7 @@ function insertarProducto(productos) {
         const productoActual = productos[c];
         const nuevoElemento = document.createElement("article");
         nuevoElemento.className = "producto";
-        const precio = productoActual.value
+        const precio = productoActual.price
         nuevoElemento.innerHTML = `
             <a href="${productoActual.pathimg}" target="_blank">
             <img src="${productoActual.pathimg}" alt="${productoActual.description}"></a>
@@ -123,7 +122,7 @@ function insertarProducto(productos) {
 function insertarProductoHTML(producto) {
     const listaCarrito = document.querySelector("#carrito .list-group");
     const liProducto = document.createElement("li");
-    liProducto.textContent = `${producto.name} ${producto.value.toLocaleString("es-AR", { style: "currency", currency: "ARS" })}`;
+    liProducto.textContent = `${producto.name} ${producto.price.toLocaleString("es-AR", { style: "currency", currency: "ARS" })}`;
     liProducto.className = "list-group-item";
     listaCarrito.appendChild(liProducto);
 }
@@ -141,6 +140,8 @@ function guardarCarritoEnStorage(listaCarrito) {
 function vaciarCarritoHTML() {
     const listaVaciar = document.querySelector("#carrito .list-group");
     listaVaciar.innerHTML = "";
+    const divTotal = document.querySelector(".montoTotal");
+    divTotal.textContent = "$0,00";
 }
 
 function mostrarDescripcion(evento) {
@@ -201,6 +202,18 @@ function eliminarCarritoEnStorage() {
     vaciarCarritoHTML();
 }
 
+function calcularMontoTotal(evento) {
+    const carrito = cargarCarritoStorage();
+    if (carrito) {
+        const total = calcularTotal(carrito);
+        const elementoTotal = evento.target;
+        // console.log(elementoTotal);
+        const divMonto = elementoTotal.closest(".total");
+        // console.log(divMonto);
+        const divTotal = divMonto.querySelector(".montoTotal");
+        divTotal.textContent = total.toLocaleString("es-AR", { style: "currency", currency: "ARS" });
+    }
+}
 
 async function main() {
     productos = await cargarProductosApi();
@@ -216,11 +229,13 @@ async function main() {
     const vaciarCarrito = document.querySelector("#carrito .vaciarCarrito");
     vaciarCarrito.addEventListener("click", eliminarCarritoEnStorage);
 
+    const calcularPrecioTotal = document.querySelector("#carrito .calcularMontoTotal");
+    calcularPrecioTotal.addEventListener("click", calcularMontoTotal)
+
     listaCarrito = cargarCarritoStorage();
 
     if (listaCarrito.length != 0) {
         for (const producto of listaCarrito) {
-            console.log(producto.amount);
             insertarProductoHTML(producto);
         }
         actualizaContador();
@@ -255,5 +270,5 @@ function validarFormulario(evento) {
 
 main();
 const validacionForm = document.querySelector("#contact .formulario")
-console.log(validacionForm)
+// console.log(validacionForm)
 validacionForm.addEventListener("submit", validarFormulario)
