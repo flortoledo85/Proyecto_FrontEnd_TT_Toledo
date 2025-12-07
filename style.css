@@ -47,29 +47,20 @@ header {
   /*top: 2.5vh;*/
 }
 
-.top_line h1 {
-    font-family: 'Manrose', sans-serif;
-    font-size: 3rem;
-    color: white;
-    background-color: rgb(0, 14, 63);
-    padding: 0.5rem 1rem;
-}
-
-.top_line img{
-  width: 80px;
-  height: auto;
-  border: 5px solid rgb(12, 66, 181);
-  border-radius: 50%;
-}
-
 .top_line {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: rgb(1, 15, 67);
+  background-color: rgb(33, 72, 213);
   padding: 0.5rem;
 }
 
+.top_line h1 {
+    font-family: 'Manrose', sans-serif;
+    font-size: 3rem;
+    color: white;
+    padding: 0.5rem 1rem;
+}
 
 header h2 {
     font-size: 1.75rem; 
@@ -82,7 +73,49 @@ header h2 {
     color: wheat;
 }
 
-.menu-nav nav {
+.menu-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0b0372;
+  z-index: 1000;
+  padding: 1rem 0;
+}
+
+.menu-nav ul {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+  list-style: none;
+}
+
+.menu-nav li a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: 100;
+  transition: 0.3s;
+}
+
+.menu-nav img{
+  width: 50px;
+  height: auto;
+  border: 5px solid rgb(12, 66, 181);
+  border-radius: 50%;
+}
+
+.menu-nav li a:hover {
+  font-weight: 500;
+}
+
+/* .menu-nav nav {
+  position: fixed;
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
   text-transform: uppercase;
@@ -94,17 +127,18 @@ header h2 {
   margin: 2%;
   display: flex;
   /*border: 4px solid rgb(109, 16, 109); */
-  align-items: center;
-  flex-wrap: wrap;
+  /* align-items: center; */
+  /* flex-wrap: wrap; */
   /*gap: 20px;*/
-  justify-content: space-evenly;
-  color: whitesmoke;
-}
+  /* justify-content: space-evenly; */
+  /* color: whitesmoke; */
+/* } */
 
 /*Body__________________________________________________________*/
 
 
 body {
+  padding-top: 70px;
   margin: 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -117,6 +151,7 @@ body {
   height: 100%;
   font-weight: 400;
   font-size: 1rem;
+  padding-top: 70px;
 }
 
 
@@ -255,17 +290,24 @@ main {
 }
 #carrito .btn-primary-custom:hover{color: whitesmoke;}
 
-#resenias {
-  padding: 3rem;
+.h2_carrito{
+  padding: 2rem;
+  margin-top: 10vh;
+  color: whitesmoke;
 }
 
-#resenias h2 {
+/* #resenias {
   padding: 3rem;
+} */
+
+#resenias h2 {
+  padding: 2rem;
   margin-top: 10vh;
   color: whitesmoke;
 }
 
 .resenias--contenedor{
+  padding: 3rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
   /*grid-template-rows: auto;*/
@@ -347,11 +389,17 @@ main {
   box-shadow: 10px 10px 15px rgba(0,0,0,0.5);
 } */
 
+#contact .h2_contacto {
+  padding: 2rem;
+  margin-top: 5%;
+  color: whitesmoke;
+}
+
 .contact_section {
-  margin: 5% auto;
+  margin: 1% auto;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: wrap;
   gap: 40px;
   color: whitesmoke;
