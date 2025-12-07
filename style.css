@@ -22,7 +22,7 @@ a {
   font-weight: 700;
   font-size: 1rem;
   cursor: pointer;
-  color: aliceblue;
+  color: whitesmoke;
   background-color: #0b0372;
   border-radius: 6px;
   box-shadow: 4px 4px 6px rgba(0,0,0,0.7);
@@ -231,7 +231,7 @@ main {
   box-sizing: border-box;
 }
 
-#carrito .mi-boton {
+/* #carrito .mi-boton {
   width: 25%;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
@@ -248,11 +248,12 @@ main {
   background-color: #124dd7;
   transform: translateY(-5px);
   box-shadow: 10px 10px 15px rgba(0,0,0,0.5);
-}
+} */
 
 #carrito .btn-primary-custom{
   width: 25%;
 }
+#carrito .btn-primary-custom:hover{color: whitesmoke;}
 
 #resenias {
   padding: 3rem;
