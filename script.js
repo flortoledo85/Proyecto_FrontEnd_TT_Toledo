@@ -13,15 +13,15 @@ async function cargarProductosApi() {
     try {
         const respuesta = await fetch("./productos.json");
         if (!respuesta.ok) {
-            throw new Error(`Error al ;obtener los datos ${respuesta.status} - ${respuesta.statusText}`);
+            throw new Error(`Error al obtener los datos ${respuesta.status} - ${respuesta.statusText}`);
         }
         const productosArray = await respuesta.json();
         return productosArray;
     }
     catch (datosError) {
-        console.datosEerror("Fallo en la carga de datos: ", datosError);
-        const listaUL = document.querySelector("#productos .catalogo");
-        listaUL.innerHTML = `<li id="mensaje-error"> Error al cargar el catalogo.</li>`
+        console.error("Fallo en la carga de datos: ", datosError);
+        const contenedor = document.querySelector("#productos .catalogo");
+        contenedor.innerHTML = `<p id="mensaje-error"> Error al cargar el catalogo.</p>`
     }
 }
 
@@ -121,11 +121,11 @@ function insertarProducto(productos) {
 }
 
 function insertarProductoHTML(producto) {
-    const listaCarrito = document.querySelector("#carrito .list-group");
+    const listaCarritoHTML = document.querySelector("#carrito .list-group");
     const liProducto = document.createElement("li");
     liProducto.textContent = `${producto.name} ${producto.price.toLocaleString("es-AR", { style: "currency", currency: "ARS" })}`;
     liProducto.className = "list-group-item";
-    listaCarrito.appendChild(liProducto);
+    listaCarritoHTML.appendChild(liProducto);
 }
 
 function actualizaContador() {
@@ -158,10 +158,10 @@ function mostrarDescripcion(evento) {
             const elementoDescrip = document.createElement("p");
             elementoDescrip.textContent = descripcionProducto;
             divDescrip.appendChild(elementoDescrip);
-            elementoClickeado.textContent = "Descripcion "+"\u2212";
+            elementoClickeado.textContent = "Descripción \u2212";
         }
         else {
-            elementoClickeado.textContent = "Descripcion "+"\uFF0B";
+            elementoClickeado.textContent = "Descripción \uFF0B";
             divDescrip.innerHTML = "";
         }
     }
@@ -219,7 +219,12 @@ function calcularMontoTotal(evento) {
 async function main() {
     productos = await cargarProductosApi();
 
-    insertarProducto(productos)
+    if(productos && productos.length > 0){
+        insertarProducto(productos);
+    }
+    else {
+        alert("No se pueden cargar los productos. Intente mas tarde")
+    }
 
 
     const contenedorProducto = document.querySelector("#productos .catalogo");
