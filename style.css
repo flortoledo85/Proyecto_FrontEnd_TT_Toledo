@@ -306,7 +306,7 @@ main {
   padding: 3rem;
   margin-top: 5vh;
   width: 20rem;
-  height: 23rem;
+  height: 25rem;
   text-align: center;
   border: 2px rgb(1, 1, 182) solid;
   border-radius: 10%;
@@ -320,8 +320,8 @@ main {
 }
 
 .card-resenias img{
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   border-radius: 50%;
 }

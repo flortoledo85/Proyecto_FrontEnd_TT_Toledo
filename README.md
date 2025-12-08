@@ -1,24 +1,60 @@
+Descripción:
 
-El siguiente codigo tiene como proposito crear una pagina e-commerce de venta de armazones de anteojos y anteojos de
-sol.
-La funcionalidad es limitada todavia. La pagina cuenta con secciones: productos, carrito, reseñas, medidas, y contacto.
-
-En la seccion productos se encuentran cargados uno por uno cada producto (21 al momento), las imagenes se pueden clickear 
-para abrirlas mas grandes en otra pestaña. El boton de agregar al carrito permite cargar el producto (solo una vez) en una
-lista de carrito que se guardará en el storage temporal del navegador.
-En la seccion carrito se verá una lista con los items actuales en el carrito, y mediante dos botones se puede vaciar el 
-contenido del mismo, o calcular el monto total hasta el momento.
-En la seccion de medidas, se abrirá una imagen en una pestaña nueva con un esquematico de como son las medidas de un armazon. 
-En la seccion reseñas se pueden leer las reseñas dejadas por los compradores.
-En la seccion contactos se pueden encontrar los enlaces a las redes sociales y contacto de la tienda. Ademas del mapa de 
-la localizacion, y un formulario para dejar comentarios. Utilizamos Formspree para enviar el formulario.
-
-El html esta editado en el css con estilo de manera personal, aunque incluye algunos detalles de bootstrap. 
-Para accesibilidad todas las imagenes tienen alt. Y en se pretendio generar un diseño responsivo con menu "hamburguesa",
-puramente en css y html para formato de dispositivo movil. 
-Esto necesita mejora, igual que otras partes de la pagina tambien. En el caso de dispositivos moviles el video inserto en
-la página no se muestra. 
+Optic Choices es una página e-commerce sencilla para la venta de armazones y anteojos de sol.
+La funcionalidad actual es limitada: catálogo de productos, carrito persistente en localStorage, sección de reseñas, medidas y formulario de contacto (envío mediante Formspree).
 
 
+Funcionalidades principales:
+
+Catálogo de productos (21 items al momento). Cada producto incluye imagen, nombre, descripción y precio.
+
+Las imágenes del producto se abren en nueva pestaña al hacer click.
+
+Botón Agregar al carrito añade el producto una sola vez al carrito (lista guardada en localStorage).
+
+Carrito: lista de ítems, botón para vaciar el carrito y botón para calcular el total.
+
+Sección Medidas: abre un diagrama de medidas en una pestaña nueva.
+
+Sección Reseñas: muestra opiniones de clientes.
+
+Sección Contacto: enlaces a redes, teléfono, mapa incrustado y formulario (Formspree).
 
 
+Estructura del Proyecto:
+
+index.html — página principal
+
+style.css — estilos
+
+script.js — lógica de interacción (fetch, carrito, listeners)
+
+productos.json — listado de productos
+
+pictures/ — imágenes (productos y reseñas)
+
+README.md — documentación
+
+
+Consideraciones: 
+
+Todas las imágenes incluyen alt para accesibilidad.
+
+El formulario de contacto usa Formspree para gestión de envíos.
+
+Menú “hamburguesa” responsive implementado con CSS (sin JS).
+
+Imagenes guardadas con tamaño reducido, y preload metadata en el video. 
+
+En dispositivos el video no está disponible para su visualización.
+
+
+Mejoras a realizar: 
+
+Manejo de cantidad por producto en carrito (actualmente agrega solo 1 por producto).
+
+Posibilidad de eliminar un producto.
+
+Calculo de total de forma automatica al agregar al carrito. 
+
+Etc, etc, etc... 
