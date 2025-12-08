@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <link
@@ -32,8 +32,10 @@
                     </li>
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="#productos">Productos</a></li>
-                    <li><a href="./pictures/medidas.jpg" target="_blank" alt="Diagrama de un par de anteojos visto de frente y de costado que muestra las dimensiones principales: ancho total 136 mm, ancho del cristal 54 mm, alto del cristal 40 mm, puente de 18 mm y patillas de 140 mm.">Medidas</a></li>
-                    <li><a href="#resenias" target="_self">Reseñas</a>
+                    <li><a href="./pictures/medidas.jpg" target="_blank"
+                            aria-label="Diagrama de un par de anteojos visto de frente y de costado que muestra las dimensiones principales: ancho total 136 mm, ancho del cristal 54 mm, alto del cristal 40 mm, puente de 18 mm y patillas de 140 mm.">Medidas</a>
+                    </li>
+                    <li><a href="#resenias" target="_self">Reseñas</a></li>
                     <li><a href="#contact" target="_self">Contacto</a></li>
                     <li><a href="#carrito"><i class="fa fa-shopping-bag fa-lg" aria-hidden="true"></i></a></li>
                 </ul>
@@ -42,7 +44,7 @@
     </header>
     <main>
         <div id="video-section" class="video-section">
-            <video controls poster="./pictures/video_promo.png">
+            <video controls preload="metadata" poster="./pictures/video_promo.png">
                 <source src="./pictures/video_promo.mp4" type="video/mp4">
                 Tu navegador no soporta video HTML5.
                 <track src="./pictures/subtitulos.vtt" kind="subtitles" srclang="es" label="Español" default>
@@ -98,31 +100,32 @@
         <section id="carrito">
             <h2 class="h2_carrito">Carrito de Compras</h2>
             <div class="container py-5">
-            <div class="d-flex gap-2 mb-3 aling-items-center justify-content-between">
-                <h2 class="mb-3 fs-4 text-light">Productos Elegidos</h2>
-                <span class="badge d-flex gap-3 justify-content-between p-2">
-                    <i class="fa fs-4 fa-shopping-bag" aria-hidden="true"></i>
-                    <span class="contador_compra fs-4">0</span>
-                </span>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <ul class="list-group">
-                    </ul>
+                <div class="d-flex gap-2 mb-3 align-items-center justify-content-between">
+                    <h2 class="mb-3 fs-4 text-light">Productos Elegidos</h2>
+                    <span class="badge d-flex gap-3 justify-content-between p-2">
+                        <i class="fa fs-4 fa-shopping-bag" aria-hidden="true"></i>
+                        <span class="contador_compra fs-4">0</span>
+                    </span>
                 </div>
-            </div>
-            <div class="total d-flex justify-content-between mt-4">
-                <h5 class="text-light">Total: <span class="montoTotal" id="cart-total">$0,00</span></h5>
-                <button type="button" class="vaciarCarrito btn btn-primary-custom">Vaciar Carrito</button>
-                <button class="btn calcularMontoTotal btn-primary-custom">Calcular Total</button>
-            </div>
+                <div class="row">
+                    <div class="col">
+                        <ul class="list-group">
+                        </ul>
+                    </div>
+                </div>
+                <div class="total d-flex justify-content-between mt-4">
+                    <h5 class="text-light">Total: <span class="montoTotal" id="cart-total">$0,00</span></h5>
+                    <button type="button" class="vaciarCarrito btn btn-primary-custom">Vaciar Carrito</button>
+                    <button class="btn calcularMontoTotal btn-primary-custom">Calcular Total</button>
+                </div>
             </div>
         </section>
         <section id="resenias">
             <h2>Reseñas</h2>
             <div class="resenias--contenedor">
                 <article class="card-resenias">
-                    <img src="./pictures/rostro1.jpg" alt="Persona con gafas de sol modernas de lentes púrpura, capturada en un ambiente urbano con estética relajada.">
+                    <img src="./pictures/rostro1.jpg"
+                        alt="Persona con gafas de sol modernas de lentes púrpura, capturada en un ambiente urbano con estética relajada.">
                     <div class="card--contenido">
                         <h3>Marisa</h3>
                         <p>
@@ -137,7 +140,8 @@
                     </div>
                 </article>
                 <article class="card-resenias">
-                    <img src="./pictures/rostro2.jpg" alt="Persona con gafas de marco negro en una atmósfera nocturna cálida con iluminación decorativa de fondo.">
+                    <img src="./pictures/rostro2.jpg"
+                        alt="Persona con gafas de marco negro en una atmósfera nocturna cálida con iluminación decorativa de fondo.">
                     <div class="card--contenido">
                         <h3>Esteban</h3>
                         <p>
@@ -152,7 +156,8 @@
                     </div>
                 </article>
                 <article class="card-resenias">
-                    <img src="./pictures/rostro3.jpg" alt="Mujer de perfil mirando a la cámara, con gafas redondas de carey, pendientes circulares dorados y capa beige con ribetes negros, fondo de pared de piedra desenfocada.">
+                    <img src="./pictures/rostro3.jpg"
+                        alt="Mujer de perfil mirando a la cámara, con gafas redondas de carey, pendientes circulares dorados y capa beige con ribetes negros, fondo de pared de piedra desenfocada.">
                     <div class="card--contenido">
                         <h3>Lula</h3>
                         <p>
@@ -167,7 +172,8 @@
                     </div>
                 </article>
                 <article class="card-resenias">
-                    <img src="./pictures/rostro4.jpg" alt="Primer plano de mujer mirando hacia arriba con gafas redondas transparentes, fondo urbano con luces desenfocadas y ambiente cálido.">
+                    <img src="./pictures/rostro4.jpg"
+                        alt="Primer plano de mujer mirando hacia arriba con gafas redondas transparentes, fondo urbano con luces desenfocadas y ambiente cálido.">
                     <div class="card--contenido">
                         <h3>Julieta</h3>
                         <p>
@@ -182,7 +188,8 @@
                     </div>
                 </article>
                 <article class="card-resenias">
-                    <img src="./pictures/rostro5.jpg" alt="Hombre con gafas de sol negras en una playa, con montaña y ciudad desenfocadas al fondo, usando remera oscura y buzo gris anudado sobre los hombros.">
+                    <img src="./pictures/rostro5.jpg"
+                        alt="Hombre con gafas de sol negras en una playa, con montaña y ciudad desenfocadas al fondo, usando remera oscura y buzo gris anudado sobre los hombros.">
                     <div class="card--contenido">
                         <h3>Martin</h3>
                         <p>
@@ -197,7 +204,8 @@
                     </div>
                 </article>
                 <article class="card-resenias">
-                    <img src="./pictures/rostro6.jpg" alt="Primer plano de mujer sonriente con gafas cuadradas, cabello ondulado y chaqueta de jean azul, apoyando el mentón en la mano, con pared de ladrillos desenfocada de fondo.">
+                    <img src="./pictures/rostro6.jpg"
+                        alt="Primer plano de mujer sonriente con gafas cuadradas, cabello ondulado y chaqueta de jean azul, apoyando el mentón en la mano, con pared de ladrillos desenfocada de fondo.">
                     <div class="card--contenido">
                         <h3>Sofia</h3>
                         <p>
@@ -218,32 +226,34 @@
             <div class="contact_section">
                 <div class="datos_contacto">
                     <h2>¿En qué podemos ayudarte?</h2>
-                    <li>Local 67. Calle 70 #325. La Plata. Buenos Aires</li><br>
-                    <li>
-                        <a href="https://wa.me/5491141852361" target="_blank" aria-label="WhatsApp">
-                            <i class="fab fa-whatsapp"></i> Whatsapp: +54 9 11 4185 2361</a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/optic_choices" target="_blank" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i> Instagram: @optic.choises</a>
-                    </li>
-                    <li>
-                        <a href="mailto:contacto@tienda.com" aria-label="Email">
-                            <i class="fas fa-envelope"></i> Email: contacto@tienda.com</a>
-                    </li>
-                    <li>
-                        <a href="tel:+541114567891" aria-label="Teléfono">
-                            <i class="fas fa-phone"></i> Teléfono: +54 11 1456 7891</a>
-                    </li>
+                    <ul>
+                        <li>Local 67. Calle 70 #325. La Plata. Buenos Aires</li>
+                        <li>
+                            <a href="https://wa.me/5491141852361" target="_blank" aria-label="WhatsApp">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Whatsapp: +54 9 11 4185 2361</a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/optic_choices" target="_blank" aria-label="Instagram">
+                                <i class="fab fa-instagram" aria-hidden="true"></i> Instagram: @optic.choises</a>
+                        </li>
+                        <li>
+                            <a href="mailto:contacto@tienda.com" aria-label="Email">
+                                <i class="fas fa-envelope" aria-hidden="true"></i> Email: contacto@tienda.com</a>
+                        </li>
+                        <li>
+                            <a href="tel:+541114567891" aria-label="Teléfono">
+                                <i class="fas fa-phone" aria-hidden="true"></i> Teléfono: +54 11 1456 7891</a>
+                        </li>
+                    </ul>
                 </div>
-                <form class="formulario" action="https://formspree.io/f/mldwvzwb" method="POST" , autocomplete="on">
+                <form class="formulario" action="https://formspree.io/f/mldwvzwb" method="POST" autocomplete="on">
                     <input type="hidden" name="_redirect" value="https://tusitio.com/gracias.html">
                     <div class="form_">
                         <label for="nombre">Nombre: </label>
                         <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
                     </div>
                     <div class="form_">
-                        <label for="enail">Email: </label>
+                        <label for="email">Email: </label>
                         <input type="email" id="email" name="email" required placeholder="tuemail@mailserver.com">
                     </div>
                     <div class="form_">
@@ -254,7 +264,7 @@
                 </form>
                 <iframe class="mapa"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.2974645379622!2d-57.92729702426757!3d-34.924075974487565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2e8a901b6347d%3A0xd01e54dd6e9ef08c!2sC.%2070%20325%2C%20B1904%20BFM%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1sen!2sar!4v1760299149645!5m2!1sen!2sar"
-                    width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                    width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" decoding="async"
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
