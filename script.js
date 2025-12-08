@@ -186,7 +186,7 @@ function agregarAlCarrito(evento) {
 
 function cargarCarritoStorage() {
     const carritoJSON = localStorage.getItem("listaCarrito");
-    console.log(carritoJSON);
+    // console.log(carritoJSON);
     if (carritoJSON) {
         return JSON.parse(carritoJSON);
     }
@@ -270,6 +270,6 @@ function validarFormulario(evento) {
 // EJECUCION DE MI PROGRAMA
 
 main();
-const validacionForm = document.querySelector("#contact .formulario")
+const validacionForm = document.querySelector("#contact .formulario");
 // console.log(validacionForm)
-validacionForm.addEventListener("submit", validarFormulario)
+validacionForm.addEventListener("submit", validarFormulario);
