@@ -101,7 +101,7 @@ function insertarProducto(productos) {
             <h3>${productoActual.name}</h3>
             <p>
                 <a class="description_product" href="#." data-descripcion="${productoActual.description}"> 
-                Ver descripción</a>
+                Descripción &#xFF0B;</a>
             </p>
             <div class="contenedor_descripcion">
             </div> 
@@ -158,10 +158,10 @@ function mostrarDescripcion(evento) {
             const elementoDescrip = document.createElement("p");
             elementoDescrip.textContent = descripcionProducto;
             divDescrip.appendChild(elementoDescrip);
-            elementoClickeado.textContent = "Ocultar descripcion";
+            elementoClickeado.textContent = "Descripcion "+"\u2212";
         }
         else {
-            elementoClickeado.textContent = "Ver descripcion";
+            elementoClickeado.textContent = "Descripcion "+"\uFF0B";
             divDescrip.innerHTML = "";
         }
     }

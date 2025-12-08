@@ -216,9 +216,10 @@ main {
 }
 
 .producto .description_product{
+  all: unset;
   text-align: center;
   font-family: "Inter", sans-serif;
-  font-style: italic;
+  /* font-style: italic; */
   font-size: 1rem;
   font-weight: 600;
   color: aliceblue;
@@ -226,8 +227,12 @@ main {
   transition: 0.3s; 
 }
 
+.producto p.description_product {
+  color: aliceblue;
+}
+
 .producto .description_product:hover{
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   color: #82e3df;
 } 
 
@@ -270,14 +275,14 @@ main {
 #carrito .btn-primary-custom:hover{color: whitesmoke;}
 
 #carrito .total {
-  gap: 10px;
+  gap: 6px;
   flex-wrap: wrap;
 }
 
 .h2_carrito{
   padding: 2rem;
   padding-top: 12vh;
-  color: whitesmoke;
+  color: rgb(245, 245, 245);
 }
 
 #resenias h2 {
