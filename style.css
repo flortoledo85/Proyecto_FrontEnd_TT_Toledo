@@ -111,7 +111,7 @@ header h2 {
   justify-content: center;
   grid-template-columns: 1fr;
   align-items: center;
-  background-color: #1938e7;
+  background-color: #3045bb;
   z-index: 1000;
 }
 
@@ -289,7 +289,6 @@ main {
   padding: 3rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
-  /*grid-template-rows: auto;*/
   gap: 4rem;
   justify-content: center;
   justify-items: center;
@@ -406,7 +405,7 @@ footer {
     font-size: 1rem;
     cursor: pointer;
     z-index: 1000;
-    background-color: rgba(25, 56, 231, 0.9);
+    background-color: rgba(28, 49, 166, 0.9);
     padding: 6px 6px;
     border-radius: 5px;
   }

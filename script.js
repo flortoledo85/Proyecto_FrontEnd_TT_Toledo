@@ -264,7 +264,7 @@ function validarFormulario(evento) {
         return;
     }
 
-    console.log("Formulario correcto");
+    // console.log("Formulario correcto");
     evento.target.submit();
     evento.target.reset();
 
