@@ -26,8 +26,8 @@ html {
   font-weight: 700;
   font-size: 1rem;
   cursor: pointer;
-  color: #0a0a0a;
-  background-color: #00d9ff;
+  color: whitesmoke;
+  background-color: #0b0372;
   border-radius: 6px;
   box-shadow: 4px 4px 6px rgba(0,0,0,0.7);
   transition: 0.3s;
@@ -39,9 +39,9 @@ html {
 }
 
 .btn-primary-custom:hover {
-  background-color: #00ff88;
+  background-color: #124dd7;
   transform: translateY(-5px);
-  box-shadow: 10px 10px 15px rgba(0,217,255,0.5);
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.5);
 }
 
 
@@ -59,7 +59,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: #0a0a0a;
+  background-color: rgb(0, 26, 118);
   padding: 0.5rem;
   padding-top: 12vh;
   margin-top: 0;
@@ -80,7 +80,7 @@ header h2 {
     margin-top: 2vh;
     margin-left: 15vw;
     margin-right: 15vw;
-    color: #00d9ff;
+    color: wheat;
 }
 
 #menu-toggle {
@@ -111,7 +111,7 @@ header h2 {
   justify-content: center;
   grid-template-columns: 1fr;
   align-items: center;
-  background-color: #1a1a1a;
+  background-color: #3045bb;
   z-index: 1000;
 }
 
@@ -146,7 +146,7 @@ header h2 {
 
 .menu-nav li a:hover {
   font-weight: 500;
-  text-shadow: 15px 15px 25px rgba(0,217,255,0.8);
+  text-shadow: 15px 15px 25px rgba(255,255,255,0.8);
 }
 
 
@@ -161,7 +161,7 @@ body {
   grid-template-rows: auto 1fr auto;
   gap: 0.1vw;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(90deg, #2a2a2a, #1f1f1f, #0f0f0f);
+  background: linear-gradient(90deg, #3475f8, #487ce3, #638ada);
   width: 100vw;
   height: 100vh;
   font-weight: 400;
@@ -197,8 +197,8 @@ main {
 
 .producto {
   width: 30rem;
-  border: 2px solid #00d9ff;
-  background-color: rgba(26, 26, 26, 0.95);
+  border: 2px solid whitesmoke;
+  background-color: rgba(2, 94, 175, 0.85);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -227,7 +227,7 @@ main {
 }
 
 .producto .description_product:hover{
-  color: #00ff88;
+  color: #82e3df;
 } 
 
 .producto .contenedor_descripcion{
@@ -266,7 +266,7 @@ main {
   padding: 0.4rem 0.8rem;
   font-size: 0.9rem;
 }
-#carrito .btn-primary-custom:hover{color: #0a0a0a;}
+#carrito .btn-primary-custom:hover{color: whitesmoke;}
 
 #carrito .total {
   gap: 6px;
@@ -307,9 +307,9 @@ main {
   width: 20rem;
   height: 25rem;
   text-align: center;
-  border: 2px #00d9ff solid;
+  border: 2px rgb(1, 1, 182) solid;
   border-radius: 10%;
-  background-color: #1a1a1a;
+  background-color: rgb(17, 94, 217);
   color: rgb(244, 238, 230);
   font-family: "Poppins", sans-serif;
   font-weight: 300;
@@ -326,10 +326,10 @@ main {
 }
 
 .card-resenias:hover{
-  background-color: #0a0a0a;
+  background-color: #042975;
   transform: translateY(-5px);
   opacity: 1;
-  box-shadow: 10px 10px 15px rgba(0,217,255,0.5);
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.5);
 }
 
 .formulario .form_ {
@@ -388,7 +388,7 @@ footer {
     font-size: 15px;
     font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
-    color: #00ff88;
+    color: orange;
     text-align: center;
 }
 
@@ -405,7 +405,7 @@ footer {
     font-size: 1rem;
     cursor: pointer;
     z-index: 1000;
-    background-color: rgba(26, 26, 26, 0.9);
+    background-color: rgba(28, 49, 166, 0.9);
     padding: 6px 6px;
     border-radius: 5px;
   }
@@ -418,7 +418,7 @@ footer {
   .menu-nav nav ul {
     display: none;
     flex-direction: row;
-    background-color: #1a1a1a;
+    background-color: #1938e7;
     border-radius: 10px;
     position: fixed;
     top: 0;
@@ -434,6 +434,7 @@ footer {
     display: inline-block;
   }
 
+  
   .menu-nav nav ul li:first-child {
     display: none;
   }
